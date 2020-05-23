@@ -51,18 +51,18 @@ public class AppConfig {
         return dataSource;
     }
 
-//    @Profile("dev")
-//    @Bean(name = "dataSource")
-//    public DataSource dataSourceForTests() {
-//
-//        return new EmbeddedDatabaseBuilder()
-//                .generateUniqueName(true)
-//                .setType(H2)
-//                .setScriptEncoding("UTF-8")
-//                .ignoreFailedDrops(true)
-//                .addScript("test.sql")
-//                .build();
-//    }
+    @Profile("dev")
+    @Bean(name = "dataSource")
+    public DataSource dataSourceForTests() {
+
+        return new EmbeddedDatabaseBuilder()
+                .generateUniqueName(true)
+                .setType(H2)
+                .setScriptEncoding("UTF-8")
+                .ignoreFailedDrops(true)
+                .addScript("test.sql")
+                .build();
+    }
 
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
