@@ -40,7 +40,7 @@ public class AppConfig {
         return em;
     }
 
-//    @Profile("prod")
+    @Profile("prod")
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
